@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="coachscribe:war">
+    <output-path>$PROJECT_DIR$/Backend/coachscribe/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>coachscribe</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="coachscribe-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="coachscribe:war exploded" />
+    </root>
+  </artifact>
+</component>
