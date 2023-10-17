@@ -24,7 +24,5 @@ public class WebsocketConfig implements WebSocketMessageBrokerConfigurer {
     public void registerStompEndpoints(StompEndpointRegistry registry) {
         //enabling cross-origin to be able to pick up previous conversations
         registry.addEndpoint("/ws").setAllowedOriginPatterns("*").withSockJS();
-
-
     }
 }
