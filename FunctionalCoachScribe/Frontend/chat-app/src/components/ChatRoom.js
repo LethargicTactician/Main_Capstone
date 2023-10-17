@@ -31,7 +31,7 @@ const ChatRoom = () => {
     }
 
     const userJoin=()=>{
-          var chatMessage = {
+          let chatMessage = {
             senderName: userData.username,
             status:"JOIN"
           };
@@ -54,13 +54,14 @@ const ChatRoom = () => {
         }
     }
     
+    //---RECEIVE PRIVATE MESSAGE----
     const onPrivateMessage = (payload)=>{
         console.log(payload);
         var payloadData = JSON.parse(payload.body);
         if(privateChats.get(payloadData.senderName)){
             privateChats.get(payloadData.senderName).push(payloadData);
             setPrivateChats(new Map(privateChats));
-        }else{
+        } else{
             let list =[];
             list.push(payloadData);
             privateChats.set(payloadData.senderName,list);
@@ -92,15 +93,16 @@ const ChatRoom = () => {
 
     const sendPrivateValue=()=>{
         if (stompClient) {
-          var chatMessage = {
+          let chatMessage = {
             senderName: userData.username,
-            receiverName:tab,
+            receivername:tab,
             message: userData.message,
             status:"MESSAGE"
           };
           
           if(userData.username !== tab){
             privateChats.get(tab).push(chatMessage);
+            //privateChats.set(tab).push(chatMessage);
             setPrivateChats(new Map(privateChats));
           }
           stompClient.send("/app/private-message", {}, JSON.stringify(chatMessage));
@@ -124,7 +126,7 @@ const ChatRoom = () => {
         <div className="chat-box">
             <div className="member-list">
                 <ul>
-                    <li onClick={()=>{setTab("CHATROOM")}} className={`member ${tab==="CHATROOM" && "active"}`}>Chatroom</li>
+                    <li onClick={()=>{setTab("CHATROOM")}} className={`member ${tab==="CHATROOM" && "active"}`}>Public Chatroom</li>
                     {[...privateChats.keys()].map((name,index)=>(
                         <li onClick={()=>{setTab(name)}} className={`member ${tab===name && "active"}`} key={index}>{name}</li>
                     ))}
