@@ -1,0 +1,20 @@
+version: "latest"
+
+networks:
+  netCapstone:
+    external: false
+
+services:
+  ChatService:
+    container_name: ChatService
+    build:
+      #      context: UserServiceAPI
+      dockerfile: Dockerfile
+    image: chatservice:1
+    restart: always
+    hostname: chatservice
+    ports:
+      - "8080"
+    networks:
+      - netCapstone
+  #

@@ -17,11 +17,12 @@ const ChatRoom = () => {
       console.log(userData);
     }, [userData]);
 
-    const connect =()=>{
-        let Sock = new SockJS('http://localhost:8080/ws');
+    const connect = () => {
+        let Sock = new SockJS('http://localhost:8080/ws');  // Use port 8080 for host
         stompClient = over(Sock);
-        stompClient.connect({},onConnected, onError);
-    }
+        stompClient.connect({}, onConnected, onError);
+      }
+      
 
     const onConnected = () => {
         setUserData({...userData,"connected": true});
