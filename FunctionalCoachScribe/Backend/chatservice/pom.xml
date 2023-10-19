@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>capstone</groupId>
-	<artifactId>chatservice</artifactId>
+	<artifactId>ChatService</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>chatservice</name>
+	<name>ChatService</name>
 	<description>This is so that users can interact with each other</description>
 	<properties>
 		<java.version>17</java.version>

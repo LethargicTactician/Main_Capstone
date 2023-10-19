@@ -34,6 +34,7 @@ const ChatRoom = () => {
     const userJoin=()=>{
           let chatMessage = {
             senderName: userData.username,
+            // receivername: tab,
             status:"JOIN"
           };
           stompClient.send("/app/message", {}, JSON.stringify(chatMessage));
@@ -96,7 +97,7 @@ const ChatRoom = () => {
         if (stompClient) {
           let chatMessage = {
             senderName: userData.username,
-            receivername:tab.username,
+            receiverName:tab,
             message: userData.message,
             status:"MESSAGE"
           };
