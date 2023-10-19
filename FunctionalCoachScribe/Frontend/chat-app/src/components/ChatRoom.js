@@ -6,7 +6,7 @@ var stompClient =null;
 const ChatRoom = () => {
     const [privateChats, setPrivateChats] = useState(new Map());     
     const [publicChats, setPublicChats] = useState([]); 
-    const [tab,setTab] =useState("CHATROOM");
+    const [tab,setTab] = useState("CHATROOM");
     const [userData, setUserData] = useState({
         username: '',
         receivername: '',
@@ -58,7 +58,7 @@ const ChatRoom = () => {
     //---RECEIVE PRIVATE MESSAGE----
     const onPrivateMessage = (payload)=>{
         console.log(payload);
-        var payloadData = JSON.parse(payload.body);
+        let payloadData = JSON.parse(payload.body);
         if(privateChats.get(payloadData.senderName)){
             privateChats.get(payloadData.senderName).push(payloadData);
             setPrivateChats(new Map(privateChats));
@@ -81,7 +81,7 @@ const ChatRoom = () => {
     }
     const sendValue=()=>{
             if (stompClient) {
-              var chatMessage = {
+              let chatMessage = {
                 senderName: userData.username,
                 message: userData.message,
                 status:"MESSAGE"
@@ -96,10 +96,11 @@ const ChatRoom = () => {
         if (stompClient) {
           let chatMessage = {
             senderName: userData.username,
-            receivername:tab,
+            receivername:tab.username,
             message: userData.message,
             status:"MESSAGE"
           };
+          
           
           if(userData.username !== tab){
             privateChats.get(tab).push(chatMessage);
@@ -149,9 +150,10 @@ const ChatRoom = () => {
                     <button type="button" className="send-button" onClick={sendValue}>send</button>
                 </div>
             </div>}
-            {tab!=="CHATROOM" && <div className="chat-content">
+            {/* // Check if the active tab is a private chat */}
+            {tab!=="CHATROOM" && <div className="chat-content"> 
                 <ul className="chat-messages">
-                    {[...privateChats.get(tab)].map((chat,index)=>(
+                    {[...privateChats.get(tab)].map((chat,index)=>( 
                         <li className={`message ${chat.senderName === userData.username && "self"}`} key={index}>
                             {chat.senderName !== userData.username && <div className="avatar">{chat.senderName}</div>}
                             <div className="message-data">{chat.message}</div>
@@ -161,12 +163,13 @@ const ChatRoom = () => {
                 </ul>
 
                 <div className="send-message">
-                    <input type="text" className="input-message" placeholder="enter the message" value={userData.message} onChange={handleMessage} /> 
+                    <input type="text" className="input-message" placeholder={`send private message to ${tab}`} value={userData.message} onChange={handleMessage} /> 
                     <button type="button" className="send-button" onClick={sendPrivateValue}>send</button>
                 </div>
             </div>}
         </div>
         :
+        // ---------------------------------------REGISTER---------------------------------------------
         <div className="register">
             <input
                 id="user-name"
