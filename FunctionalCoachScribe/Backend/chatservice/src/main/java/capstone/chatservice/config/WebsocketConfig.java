@@ -16,10 +16,9 @@ public class WebsocketConfig implements WebSocketMessageBrokerConfigurer {
         registry.setApplicationDestinationPrefixes("/app");
         registry.enableSimpleBroker("/chatroom", "/user");
         registry.setUserDestinationPrefix("/user");
-
     }
 
-    //setting up endpoints - this is to be able to have two users talk to eachother
+    //setting up endpoints - this is to be able to have two users talk to each other
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
         //enabling cross-origin to be able to pick up previous conversations

@@ -10,7 +10,6 @@ import org.springframework.stereotype.Controller;
 
 @Controller
 public class ChatController {
-
     @Autowired
     public SimpMessagingTemplate simpMessagingTemplate;
 

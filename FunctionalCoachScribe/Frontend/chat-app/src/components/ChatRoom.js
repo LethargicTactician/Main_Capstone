@@ -21,7 +21,7 @@ const ChatRoom = () => {
         let Sock = new SockJS('http://localhost:8080/ws');  // Use port 8080 for host
         stompClient = over(Sock);
         stompClient.connect({}, onConnected, onError);
-      }
+    }
       
 
     const onConnected = () => {
