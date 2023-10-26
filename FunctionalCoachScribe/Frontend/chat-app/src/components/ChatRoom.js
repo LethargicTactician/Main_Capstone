@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import {over} from 'stompjs';
 import SockJS from 'sockjs-client';
+import './LoginForm.css';
 
 var stompClient =null;
+
+
 const ChatRoom = () => {
     const [privateChats, setPrivateChats] = useState(new Map());     
     const [publicChats, setPublicChats] = useState([]); 
+    const [passwordError, setPasswordError] = useState('');
     const [tab,setTab] = useState("CHATROOM");
     const [userData, setUserData] = useState({
         username: '',
@@ -18,11 +22,27 @@ const ChatRoom = () => {
     }, [userData]);
 
     const connect = () => {
-        let Sock = new SockJS('http://localhost:8080/ws');  // Use port 8080 for host
+        let Sock = new SockJS('http://localhost:3737/ws');  // Use port 8080 for host
         stompClient = over(Sock);
         stompClient.connect({}, onConnected, onError);
+        Sock.onopen = function(event) {
+            console.log('WebSocket connection is open: ', event);
+          };
+          
+          Sock.onmessage = function(event) {
+            console.log('Received message:', event.data);
+          };
+          
+          Sock.onclose = function(event) {
+            console.log('WebSocket connection is closed, reason: ', event);
+          };
+          
+          Sock.onerror = function(event) {
+            console.error('WebSocket error:', event);
+          };
     }
-      
+    //-------SOCKET STUFF----------
+
 
     const onConnected = () => {
         setUserData({...userData,"connected": true});
@@ -122,10 +142,44 @@ const ChatRoom = () => {
         connect();
     }
 
+    //---------DEALING WITH PASSWORD---------------
+
+    const validatePassword = (password) => {
+        if (password.length < 8) {
+          return 'Password must be at least 8 characters long';
+        }      
+        return ''; 
+    };
+
+    const handlePassword = (event) => {
+        const password = event.target.value;
+        const error = validatePassword(password);
+        setUserData({ ...userData, password });
+        setPasswordError(error);
+    };
+
+      
+
     // -------------HTML stuff-------------------
     return (
     <div className="container">
-        {userData.connected?
+        <nav className="navbar">
+        <ul className="nav-list">
+            <li className="nav-item">
+            <a href="/">Home</a>
+            </li>
+            <li className="nav-item">
+            <a href="/about">About</a>
+            </li>
+            <li className="nav-item">
+            <a href="/services">Services</a>
+            </li>
+            <li className="nav-item">
+            <a href="/contact">Contact</a>
+            </li>
+        </ul>
+        </nav>
+        {userData.connected?        
         <div className="chat-box">
             <div className="member-list">
                 <ul>
@@ -171,19 +225,38 @@ const ChatRoom = () => {
         </div>
         :
         // ---------------------------------------REGISTER---------------------------------------------
-        <div className="register">
+        <form>
+        <div className="form-group">
+          <label htmlFor="username">Username:</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Enter your username"
+            value={userData.username}
+            onChange={handleUsername}
+            required
+          />
+        </div>
+                <div className="form-group">
+            <label htmlFor="password">Password:</label>
             <input
-                id="user-name"
-                placeholder="Enter your name"
-                name="userName"
-                value={userData.username}
-                onChange={handleUsername}
-                margin="normal"
-              />
-              <button type="button" onClick={registerUser}>
-                    connect
-              </button> 
-        </div>}
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Enter your password"
+                value={userData.password}
+                onChange={handlePassword}
+                required
+        />
+        </div>
+{passwordError && <div className="error">{passwordError}</div>}
+        <button type="button" onClick={registerUser} className="btn">
+          Login
+        </button>
+      </form>       
+        
+        }
     </div>
     )
 }
