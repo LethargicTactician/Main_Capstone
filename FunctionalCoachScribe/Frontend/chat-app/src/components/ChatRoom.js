@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import {over} from 'stompjs';
 import SockJS from 'sockjs-client';
 import './LoginForm.css';
+import 'bootstrap';
 
 var stompClient =null;
 
@@ -21,29 +22,12 @@ const ChatRoom = () => {
       console.log(userData);
     }, [userData]);
 
+    //--------------- USER CONNECTION ------------>
     const connect = () => {
-        let Sock = new SockJS('http://localhost:3737/ws');  // Use port 8080 for host
+        let Sock = new SockJS('http://localhost:8080/ws');  // Use port 8080 for host
         stompClient = over(Sock);
         stompClient.connect({}, onConnected, onError);
-        Sock.onopen = function(event) {
-            console.log('WebSocket connection is open: ', event);
-          };
-          
-          Sock.onmessage = function(event) {
-            console.log('Received message:', event.data);
-          };
-          
-          Sock.onclose = function(event) {
-            console.log('WebSocket connection is closed, reason: ', event);
-          };
-          
-          Sock.onerror = function(event) {
-            console.error('WebSocket error:', event);
-          };
     }
-    //-------SOCKET STUFF----------
-
-
     const onConnected = () => {
         setUserData({...userData,"connected": true});
         stompClient.subscribe('/chatroom/public', onMessageReceived);
@@ -60,6 +44,29 @@ const ChatRoom = () => {
           stompClient.send("/app/message", {}, JSON.stringify(chatMessage));
     }
 
+    //--------------- REGISTER ------------------>
+    const registerUser=()=>{
+        connect();
+    }
+
+    //--------------- PASSWORD------------------->
+
+    const validatePassword = (password) => {
+        if (password.length < 8) {
+            return 'Password must be at least 8 characters long';
+        }      
+        return ''; 
+    };
+
+    const handlePassword = (event) => {
+        const password = event.target.value;
+        const error = validatePassword(password);
+        setUserData({ ...userData, password });
+        setPasswordError(error);
+    };
+    
+
+    //----------- RECEIVE MESSAGES --------------->
     const onMessageReceived = (payload)=>{
         var payloadData = JSON.parse(payload.body);
         switch(payloadData.status){
@@ -74,9 +81,8 @@ const ChatRoom = () => {
                 setPublicChats([...publicChats]);
                 break;
         }
-    }
-    
-    //---RECEIVE PRIVATE MESSAGE----
+    }    
+    //---receive private message----
     const onPrivateMessage = (payload)=>{
         console.log(payload);
         let payloadData = JSON.parse(payload.body);
@@ -91,15 +97,7 @@ const ChatRoom = () => {
         }
     }
 
-    const onError = (err) => {
-        console.log(err);
-        
-    }
-
-    const handleMessage =(event)=>{
-        const {value}=event.target;
-        setUserData({...userData,"message": value});
-    }
+    //--------- SENDING MESSAGES ------------------->
     const sendValue=()=>{
             if (stompClient) {
               let chatMessage = {
@@ -133,34 +131,24 @@ const ChatRoom = () => {
         }
     }
 
+    //-------------- BUGS/ HANDLING ---------------->
+
+    const handleMessage =(event)=>{
+        const {value}=event.target;
+        setUserData({...userData,"message": value});
+    }
+
     const handleUsername=(event)=>{
         const {value}=event.target;
         setUserData({...userData,"username": value});
     }
 
-    const registerUser=()=>{
-        connect();
-    }
+    const onError = (err) => {
+        console.log(err);
+        
+    }      
 
-    //---------DEALING WITH PASSWORD---------------
-
-    const validatePassword = (password) => {
-        if (password.length < 8) {
-          return 'Password must be at least 8 characters long';
-        }      
-        return ''; 
-    };
-
-    const handlePassword = (event) => {
-        const password = event.target.value;
-        const error = validatePassword(password);
-        setUserData({ ...userData, password });
-        setPasswordError(error);
-    };
-
-      
-
-    // -------------HTML stuff-------------------
+    // -------------REACT stuff------------------->
     return (
     <div className="container">
         <nav className="navbar">

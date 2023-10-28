@@ -1,0 +1,100 @@
+version: "latest"
+
+networks:
+  netCapstone:
+
+services:
+  CAPMongoDB_UserService:
+    container_name: CAPMongoDB_UserService
+    image: mongo:latest
+    restart: always
+    hostname: CAPMongoDB_UserService
+    ports:
+      - "27017:27017"
+    networks:
+      - netCapstone
+
+  CAPEurekaRegistry:
+    container_name: CAPEurekaRegistry
+    image: steeltoeoss/eureka-server:latest
+    restart: always
+    hostname: CAPEurekaRegistry
+    ports:
+      - 8761:8761
+    networks:
+      - netCapstone
+
+  CAPAPIGatewayOcelot:
+    container_name: CAPAPIGatewayOcelot
+    build:
+      context: ./dotnet-apigateway-ocelot
+      dockerfile: UserService/Dockerfile
+    image: capocelotgatewayapi:1
+    restart: always
+    hostname: CAPAPIGatewayOcelot
+    ports:
+      - 5041:80
+    networks:
+      - netCapstone
+
+
+  UserServiceAPI:
+    container_name: UserServiceAPI
+    build:
+      dockerfile: UserService/Dockerfile
+      context: UserService
+    #      context: Dockerfile # Path to the Dockerfile and application code
+    image: userserviceapi:1
+    restart: always
+    hostname: UserServiceAPI
+    ports:
+      - "8081:8080"
+    networks:
+      - netCapstone
+    depends_on:
+      - CAPMongoDB_UserService
+      - CAPEurekaRegistry
+      - CAPAPIGatewayOcelot
+
+
+
+        #----------------------- TRASH------------------
+        #      - CapEureakRegistry
+        #      - CapOcelotGateway
+
+        #    UserService:
+        #      container_name: UserService
+        #      image: your-user-service-image
+        #      restart: always
+        #      depends_on:
+        #        - CAPMongoDB_UserService
+        #      networks:
+        #        - netCapstone
+
+        #    ChatServiceAPI:
+        #      container_name: ChatServiceAPI
+        #      build:
+        #        #      context: UserServiceAPI
+        #        dockerfile: Dockerfile
+        #      image: chat-service-api:1
+        #      restart: always
+        #      hostname: chatservice
+        #      ports:
+        #        - "8082:8083"
+        #      networks:
+        #        - netCapstone
+        #      depends_on:
+        #        - UserServiceAPI
+        #        - CAPMongoDB_UserService
+        #
+        #  rabbitmq:
+        #    image: rabbitmq:management
+        #    ports:
+        #      - "5672:5672"
+        #      - "15672:15672"
+        #    networks:
+        #      - netPRO290
+        #
+# deploy:
+#   mode: replicated
+#   replicas: 2
