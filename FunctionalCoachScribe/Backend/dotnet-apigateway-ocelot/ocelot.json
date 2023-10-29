@@ -1,7 +1,7 @@
 {
   "Routes": [
     {
-      "ServiceName": "PRO290UserServiceAPI",
+      "ServiceName": "UserServiceAPI",
       "DownstreamPathTemplate": "/{everything}",
       "UpstreamPathTemplate": "/userserviceapi/{everything}",
       "UpstreamHttpMethod": [
@@ -21,13 +21,13 @@
     }
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "http://PRO290APIGatewayOcelot:80",
+    "BaseUrl": "http://CAPAPIGatewayOcelot:80",
     "RequestIdKey": "OcRequestId",
     "DownstreamScheme": "http",
     "ReRoutesCaseSensitive": false,
     "UseServiceDiscovery": true,
     "ServiceDiscoveryProvider": {
-      "Host": "PRO290EurekaRegistry",
+      "Host": "CAPEurekaRegistry",
       "Port": 8761,
       "Type": "Eureka"
     }

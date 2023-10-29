@@ -28,7 +28,7 @@ services:
     container_name: CAPAPIGatewayOcelot
     build:
       context: ./dotnet-apigateway-ocelot
-      dockerfile: UserService/Dockerfile
+      dockerfile: /Dockerfile
     image: capocelotgatewayapi:1
     restart: always
     hostname: CAPAPIGatewayOcelot
@@ -37,24 +37,37 @@ services:
     networks:
       - netCapstone
 
-
   UserServiceAPI:
     container_name: UserServiceAPI
     build:
-      dockerfile: UserService/Dockerfile
-      context: UserService
+      dockerfile: Dockerfile
+      context: ./UserService
     #      context: Dockerfile # Path to the Dockerfile and application code
     image: userserviceapi:1
     restart: always
     hostname: UserServiceAPI
     ports:
-      - "8081:8080"
+      - "8081:8082"
     networks:
       - netCapstone
     depends_on:
       - CAPMongoDB_UserService
       - CAPEurekaRegistry
       - CAPAPIGatewayOcelot
+
+  ChatService:
+    container_name: ChatService
+    build:
+      context: ./chatservice
+      dockerfile: Dockerfile
+    image: chatservice:1
+    restart: always
+    hostname: chatservice
+    ports:
+      - "8080:8080"
+    networks:
+      - netCapstone
+
 
 
 
