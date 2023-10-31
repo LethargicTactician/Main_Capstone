@@ -41,7 +41,7 @@ services:
     container_name: UserServiceAPI
     build:
       dockerfile: Dockerfile
-      context: ./UserService
+      context: ./userServiceAPI
     #      context: Dockerfile # Path to the Dockerfile and application code
     image: userserviceapi:1
     restart: always
