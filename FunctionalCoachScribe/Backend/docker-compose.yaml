@@ -71,43 +71,43 @@ services:
 
 
 
-        #----------------------- TRASH------------------
-        #      - CapEureakRegistry
-        #      - CapOcelotGateway
+#----------------------- TRASH------------------
+#      - CapEureakRegistry
+#      - CapOcelotGateway
 
-        #    UserService:
-        #      container_name: UserService
-        #      image: your-user-service-image
-        #      restart: always
-        #      depends_on:
-        #        - CAPMongoDB_UserService
-        #      networks:
-        #        - netCapstone
+#    UserService:
+#      container_name: UserService
+#      image: your-user-service-image
+#      restart: always
+#      depends_on:
+#        - CAPMongoDB_UserService
+#      networks:
+#        - netCapstone
 
-        #    ChatServiceAPI:
-        #      container_name: ChatServiceAPI
-        #      build:
-        #        #      context: UserServiceAPI
-        #        dockerfile: Dockerfile
-        #      image: chat-service-api:1
-        #      restart: always
-        #      hostname: chatservice
-        #      ports:
-        #        - "8082:8083"
-        #      networks:
-        #        - netCapstone
-        #      depends_on:
-        #        - UserServiceAPI
-        #        - CAPMongoDB_UserService
-        #
-        #  rabbitmq:
-        #    image: rabbitmq:management
-        #    ports:
-        #      - "5672:5672"
-        #      - "15672:15672"
-        #    networks:
-        #      - netPRO290
-        #
+#    ChatServiceAPI:
+#      container_name: ChatServiceAPI
+#      build:
+#        #      context: UserServiceAPI
+#        dockerfile: Dockerfile
+#      image: chat-service-api:1
+#      restart: always
+#      hostname: chatservice
+#      ports:
+#        - "8082:8083"
+#      networks:
+#        - netCapstone
+#      depends_on:
+#        - UserServiceAPI
+#        - CAPMongoDB_UserService
+#
+#  rabbitmq:
+#    image: rabbitmq:management
+#    ports:
+#      - "5672:5672"
+#      - "15672:15672"
+#    networks:
+#      - netPRO290
+#
 # deploy:
 #   mode: replicated
 #   replicas: 2
