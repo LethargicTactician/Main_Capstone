@@ -38,10 +38,7 @@ public class UserRestController {
 
     @PostMapping(path = "")
     @ResponseStatus(code = HttpStatus.CREATED)
-    public void createBook(@RequestBody Users user) {
-        // item.setBookId(item.getBookId()); // why doesn't it do it automatically from
-        // the json - is it due to AUTO?
-        // System.out.println(item.getPublishedDate());
+    public void createUser(@RequestBody Users user) {
         user.setUserid(UUID.randomUUID());
 //            user.setJoinDate(createRandomDate(2000,2023));
         userRepository.save(user);
@@ -49,9 +46,9 @@ public class UserRestController {
 
     @PostMapping(path = "/addUsers")
     @ResponseStatus(code = HttpStatus.CREATED)
-    public void createBooks(@RequestBody List<Users> users) {
+    public void createUser(@RequestBody List<Users> users) {
         for (Users user : users) {
-            createBook(user);
+            createUser(user);
         }
     }
 
