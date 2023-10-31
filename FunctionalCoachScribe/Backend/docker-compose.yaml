@@ -54,6 +54,9 @@ services:
       - CAPMongoDB_UserService
       - CAPEurekaRegistry
       - CAPAPIGatewayOcelot
+    deploy:
+      mode: replicated
+      replicas: 1
 
   ChatService:
     container_name: ChatService
@@ -67,8 +70,6 @@ services:
       - "8080:8080"
     networks:
       - netCapstone
-
-
 
 
 #----------------------- TRASH------------------
