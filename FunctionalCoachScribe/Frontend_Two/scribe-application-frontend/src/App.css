@@ -192,6 +192,22 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 	border-color: transparent;
 }
 
+.banner {
+  margin-top: 0;
+  padding: 260px 100px 0;
+  background-image: url('./assets/img/backgroundThing.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.banner .tagline{
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  background: linear-gradient(90.21deg, rgba(170,54,124,0.5));
+}
+
+
+
 .App {
   text-align: center;
 }
