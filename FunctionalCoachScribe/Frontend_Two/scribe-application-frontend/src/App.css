@@ -44,6 +44,10 @@ h1, h2, h3, h4, h5, h6{
 }
 
 /*-------------- Navbar CSS -------------*/
+nav.navbar img{
+  max-width: 80px;
+  max-height: 80px;
+}
 nav.navbar {
   padding: 18px 0;
   position: fixed;
@@ -54,7 +58,7 @@ nav.navbar {
 }
 nav.navbar.scrolled {
   padding: 0px 0;
-  background-color: #121212;
+  background-color: #001011;
 }
 nav.navbar a.navbar-brand {
     width: 8%;
@@ -84,21 +88,21 @@ span.navbar-text {
 .social-icon a {
     width: 42px;
     height: 42px;
-    background: rgba(217, 217, 217, 0.1);
+    background: linear-gradient(90.21deg, #B18FCF -5.91%, #00181a 99.58%);
     display: inline-flex;
     border-radius: 50%;
-    margin-right: 6px;
+    margin-right: 10px;
     align-items: center;
     justify-content: center;
     line-height: 1;
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    border: 1px solid #B18FCF;
 }
 .social-icon a::before {
     content: "";
     width: 42px;
     height: 42px;
     position: absolute;
-    background-color: #ffffff;
+    background-color: #B18FCF;
     border-radius: 50%;
     transform: scale(0);
 	transition: 0.3s ease-in-out;
@@ -117,7 +121,7 @@ span.navbar-text {
 .navbar-text button {
   font-weight: 700;
   color: #fff;
-  border: 1px solid #fff;
+  border: 2px solid #fff;
   padding: 18px 34px;
   font-size: 18px;
   margin-left: 18px;
@@ -133,7 +137,7 @@ span.navbar-text {
   width: 0%;
   height: 100%;
   position: absolute;
-  background-color: #fff;
+  background-color: #B18FCF;
   left: 0;
   top: 0;
   z-index: -1;
@@ -284,7 +288,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .skill-bx {
-  background: #093a3e;
+  background: linear-gradient(90.21deg, #3dc6d3 -5.91%, #00181a 99.58%);
   border-radius: 64px;
   text-align: center;
   padding: 60px 50px;
@@ -380,7 +384,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     position: absolute;
     width: 0;
     height: 100%;
-    background: linear-gradient(90.21deg, #62BCC0 -5.91%, #4A2FBD 111.58%);
+    background: linear-gradient(90.21deg, #3dc6d3 -5.91%, #4A2FBD 111.58%);
     top: 0;
     left: 0;
     z-index: -1;
@@ -412,7 +416,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 .proj-imgbx::before {
   content: "";
-  background: linear-gradient(90.21deg, #62BCC0 -5.91%, #4A2FBD 111.58%);
+  background: linear-gradient(90.21deg, #3dc6d3 -5.91%, #4A2FBD 111.58%);
   opacity: 0.85;
   position: absolute;
   width: 100%;
@@ -462,7 +466,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 /* ------------------------DIFFERENT THING?---------------------- */
 .contact {
-  background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
+  background: linear-gradient(90.21deg, #3dc6d3 -5.91%, #00181a 111.58%);
   padding: 60px 0 200px 0;
 }
 .contact img {
