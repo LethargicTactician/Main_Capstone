@@ -2,6 +2,8 @@
 import './App.css';
 import { NavBar } from './components/NavBar';
 import {Banner} from './components/Banner';
+import {Skills} from './components/Skills';
+import {Coaches} from './components/Coaches'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -9,6 +11,8 @@ function App() {
     <div className="App">
       <NavBar/>
       <Banner/>
+      <Skills/>
+      <Coaches/>
     </div>
   );
 }
