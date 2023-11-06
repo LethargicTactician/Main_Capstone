@@ -4,12 +4,18 @@ import logo from "../assets/img/Xiao_Filler_Img2.png";
 import navIcon1 from '../assets/img/navigation-2.svg';
 import navIcon2 from '../assets/img/nav-icon2.svg';
 import navIcon3 from '../assets/img/nav-icon3.svg';
+import chat from '../components/chat-components/ChatRoom';
+import { useNavigate, Link } from 'react-router-dom';
 
 
 //import React from "react"
 export const NavBar = () => {
     const [activateLink, setActiveLink] = useState('home');
     const [scrolled, setScrolled] = useState(false);
+    const navigate = useNavigate();
+
+    const handleChatRouteClick = () => navigate(chat);
+    
 
     //when scrolling down on the window you change the background
     useEffect(() => { 
@@ -57,7 +63,10 @@ export const NavBar = () => {
                             <a href="#home"><img src={navIcon3} alt=""/> </a>
 
                         </div>
-                        <button className="vvd" onClick={() => console.log('connect')}><span>Let's Connect!</span></button>
+                        <button className="vvd" onClick={handleChatRouteClick}>
+                            <span>Let's Chat!</span>
+                            </button>
+                            <Link to={chat}>testinggggg</Link>
                     </span>
                 </Navbar.Collapse>
             </Container>

@@ -22,7 +22,7 @@ function VoiceflowChatWidget() {
     loadChatWidget();
   }, []);
 
-  return <div></div>; // You can return any JSX content you want
+  return <div>hello world</div>; // You can return any JSX content you want
 }
 
 export default VoiceflowChatWidget;
