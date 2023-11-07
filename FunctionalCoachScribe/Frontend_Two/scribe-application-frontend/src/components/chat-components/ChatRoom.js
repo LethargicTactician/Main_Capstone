@@ -150,7 +150,7 @@ export const ChatRoom = () => {
 
     // -------------REACT stuff------------------->
     return (
-    <div className="container">
+    <div className="container" id="chat">
         {/* <nav className="navbar">
         <ul className="nav-list">
             <li className="nav-item">

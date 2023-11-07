@@ -12,9 +12,9 @@ export const Banner = ()=>{
     //---------FOR ANIMATION-------
     const [loopNum, setLoopNum] = useState(0);
     const [isDeleting, setIsDeleting ] = useState(false);
-    const toRotate = [ "an adeptus", "Xiao", "your favorite coach"];
+    const toRotate = [ "not a teacher", "a good helper", "your favorite coach"];
     const [text, setText] = useState('');
-    const [delta, setDelta] = useState(300 - Math.random() * 100);
+    const [delta, setDelta] = useState(500 - Math.random() * 50);
     const period = 2000;
 
     

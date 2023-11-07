@@ -9,7 +9,7 @@ import "animate.css"
 export const Coaches =()=>{
     const coaches =[
         {
-            name: "Mr. Dawgy",
+            name: "That Math kid",
             bio: "I do math uwu",
             imgUrl: coach1,
         },
@@ -19,15 +19,15 @@ export const Coaches =()=>{
             imgUrl: coach2,
         },
         {
-            name: "Mr. Dawgy",
-            bio: "I do math uwu",
+            name: "The Math Kid's Twin brother",
+            bio: "I do not do math uwu",
             imgUrl: coach1
         },
         // ADD MORE IF YOU WANT IG
 
     ];
     return(
-        <section className="coach" id="coach">
+        <section className="coach" id="coach-info">
             <Container>
                 <Row>
                     <Col>

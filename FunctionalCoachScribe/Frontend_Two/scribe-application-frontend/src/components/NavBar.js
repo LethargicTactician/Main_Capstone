@@ -48,10 +48,11 @@ export const NavBar = () => {
 
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-
+                    {/* NAVLINKS */}
                         <Nav.Link href="#home" className={activateLink === 'home' ? 'active navbar-link': 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>Home</Nav.Link>
-                        <Nav.Link href="#purpose" className={activateLink === 'purpose' ? 'active navbar-link': 'navbar-link'} onClick={() => onUpdateActiveLink('purpose')}>Purpose</Nav.Link>
-                        <Nav.Link href="#coaches" className={activateLink === 'coaches' ? 'active navbar-link': 'navbar-link'} onClick={() => onUpdateActiveLink('coaches')}>Coaches</Nav.Link>
+                        <Nav.Link href="#coach-info" className={activateLink === 'coaches' ? 'active navbar-link': 'navbar-link'} onClick={() => onUpdateActiveLink('coaches')}>Coaches</Nav.Link>
+                        <Nav.Link href="#feedback" className={activateLink === 'purpose' ? 'active navbar-link': 'navbar-link'} onClick={() => onUpdateActiveLink('purpose')}>Feedback</Nav.Link>
+
 
 
                     </Nav>
@@ -64,7 +65,7 @@ export const NavBar = () => {
 
                         </div>
                         
-                        <button className="vvd" onClick={handleChatRouteClick}>
+                        <button className="vvd" onClick={handleChatRouteClick} href="#chat">
                             <span>Let's Chat!</span>
                             </button>
                             {/* <Link to={chat}>testinggggg</Link> */}
