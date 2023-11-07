@@ -63,6 +63,7 @@ nav.navbar.scrolled {
 nav.navbar a.navbar-brand {
     width: 8%;
 }
+
 nav.navbar .navbar-nav .nav-link.navbar-link {
   font-weight: 400;
   color: #fff !important;
@@ -74,8 +75,10 @@ nav.navbar .navbar-nav .nav-link.navbar-link {
 }
 nav.navbar .navbar-nav a.nav-link.navbar-link:hover,
 nav.navbar .navbar-nav a.nav-link.navbar-link.active {
+  color: #64e9ee;
     opacity: 1;
 }
+
 span.navbar-text {
     display: flex;
     /* margin-left: 100px;  */
@@ -213,7 +216,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   font-weight: 700;
   letter-spacing: 0.8px;
   padding: 8px 10px;
-  background: linear-gradient(90.21deg, rgba(170,54,124,0.5) -5.91%, rgba(74, 47, 189, 0.5) 120px);
+  background: linear-gradient(90.21deg, salmon -5.91%, rgba(74, 47, 189, 0.5) 120px);
   border: 1px solid rgba(255,255,255,0.5);
   font-size: 20px;
   margin-bottom: 16px;
@@ -238,7 +241,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .banner button{
-  color: black ;
+  color: whitesmoke;
   font-weight: 700;
   font-size: 20px;
   margin-top: 60px;
@@ -519,7 +522,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   position: relative;
 }
 .contact form button:hover {
-  color: #fff;
+  color: #64e9ee;
 }
 .contact form button::before {
   content: "";
@@ -547,6 +550,135 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .footer img{
   max-width: 120px;
   max-height: 120px;
+}
+
+
+/* ---------------------- CHATROOM CSS-------------------------------------- */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+input {
+  padding: 10px;
+  font-size: 1.2em;
+}
+button{
+  border: none;
+  padding: 10px;
+  background: salmon;
+  color:#fff;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+
+.container{
+  position: relative;
+}
+
+.register{
+  position: fixed;
+  padding:30px;
+  box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.034),0 6.7px 5.3px rgba(0, 0, 0, 0.048),0 12.5px 10px rgba(0, 0, 0, 0.06),0 22.3px 17.9px rgba(0, 0, 0, 0.072),0 41.8px 33.4px rgba(0, 0, 0, 0.086),0 100px 80px rgba(0, 0, 0, 0.12);
+  top:35%;
+  left:32%;
+  display: flex;
+  flex-direction: row;
+}
+.chat-box{
+  box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.034),0 6.7px 5.3px rgba(0, 0, 0, 0.048),0 12.5px 10px rgba(0, 0, 0, 0.06),0 22.3px 17.9px rgba(0, 0, 0, 0.072),0 41.8px 33.4px rgba(0, 0, 0, 0.086),0 100px 80px rgba(0, 0, 0, 0.12);
+  margin:40px 50px;
+  height: 600px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.member-list{
+  width: 20%;
+}
+
+.chat-content{
+  width:80%;
+  margin-left: 10px;
+}
+
+.chat-messages{
+  height: 80%;
+  border: 1px solid #000;
+}
+
+.send-message{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.input-message{
+  width:90%;
+  border-radius: 50px;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+.send-button{
+  width:10%;
+  border-radius: 50px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+.member{
+  padding: 10px;
+  background:  linear-gradient(90.21deg, #3dc6d3 -5.91%, #4A2FBD 111.58%);
+  border:#000;
+  cursor: pointer;
+  margin: 5px 2px;
+  box-shadow: 0 8px 8px -4px rgb(103, 161, 153);
+}
+.member.active{
+  background: #64c8cf;
+  color:#fff;
+}
+.member:hover{
+  background: black;
+  color:#64e9ee;
+}
+
+.avatar{
+  background-color: cornflowerblue;
+  padding: 3px 5px;
+  border-radius: 5px;
+  color:#fff;
+}
+.avatar.self{
+  color:#000;
+  background-color: greenyellow;
+}
+.message{
+  padding:5px;
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  margin: 5px 10px;
+}
+.message-data{
+  padding:5px;
+}
+.message.self{
+  justify-content: end;
 }
 
 

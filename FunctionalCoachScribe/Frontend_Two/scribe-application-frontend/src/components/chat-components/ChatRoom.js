@@ -151,7 +151,7 @@ export const ChatRoom = () => {
     // -------------REACT stuff------------------->
     return (
     <div className="container">
-        <nav className="navbar">
+        {/* <nav className="navbar">
         <ul className="nav-list">
             <li className="nav-item">
             <a href="/">Home</a>
@@ -166,7 +166,7 @@ export const ChatRoom = () => {
             <a href="/contact">Contact</a>
             </li>
         </ul>
-        </nav>
+        </nav> */}
         {userData.connected?        
         <div className="chat-box">
             <div className="member-list">

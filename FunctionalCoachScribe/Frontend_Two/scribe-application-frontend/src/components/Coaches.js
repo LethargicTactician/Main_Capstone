@@ -23,21 +23,6 @@ export const Coaches =()=>{
             bio: "I do math uwu",
             imgUrl: coach1
         },
-        {
-            name: "Chad",
-            bio: "flex coach",
-            imgUrl: coach2,
-        }, 
-        {
-            name: "Mr. Dawgy",
-            bio: "I do math uwu",
-            imgUrl: coach1
-        },
-        {
-            name: "Chad",
-            bio: "flex coach",
-            imgUrl: coach2,
-        },
         // ADD MORE IF YOU WANT IG
 
     ];

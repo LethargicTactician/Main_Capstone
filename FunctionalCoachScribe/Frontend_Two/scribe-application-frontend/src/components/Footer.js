@@ -1,5 +1,5 @@
 import { Col, Container, Row } from "react-bootstrap";
-import logo from "../assets/img/Xiao_Filler_Img.png";
+import logo from "../assets/img/logoipsum-225.svg";
 import navIcon1 from '../assets/img/navigation-2.svg';
 import navIcon2 from '../assets/img/nav-icon2.svg';
 import navIcon3 from '../assets/img/nav-icon3.svg';

@@ -1,11 +1,11 @@
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { useEffect, useState, } from "react";
-import logo from "../assets/img/Xiao_Filler_Img2.png";
+import logo from "../assets/img/logoipsum-225.svg";
 import navIcon1 from '../assets/img/navigation-2.svg';
 import navIcon2 from '../assets/img/nav-icon2.svg';
 import navIcon3 from '../assets/img/nav-icon3.svg';
 import chat from '../components/chat-components/ChatRoom';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link, Router } from 'react-router-dom';
 
 
 //import React from "react"
@@ -63,10 +63,11 @@ export const NavBar = () => {
                             <a href="#home"><img src={navIcon3} alt=""/> </a>
 
                         </div>
+                        
                         <button className="vvd" onClick={handleChatRouteClick}>
                             <span>Let's Chat!</span>
                             </button>
-                            <Link to={chat}>testinggggg</Link>
+                            {/* <Link to={chat}>testinggggg</Link> */}
                     </span>
                 </Navbar.Collapse>
             </Container>

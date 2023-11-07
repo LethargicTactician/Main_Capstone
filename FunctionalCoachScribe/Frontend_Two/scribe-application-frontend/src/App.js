@@ -15,14 +15,10 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <NavBar/>
-        <Routes>
-          <Route path="/chat" element={<ChatRoom/>}/>
-          <Route/>
-        </Routes>
-
         <Banner/>
         <Skills/>
         <Coaches/>
+        <ChatRoom/>  
         <Contact/>
         <Footer/>
     </div>
