@@ -36,7 +36,7 @@ public class UserRestController {
         return userRepository.findById(userid).orElseThrow(() -> new NoSuchElementException());
     }
 
-    @PostMapping(path = "")
+    @PostMapping(path = "/utserthing")
     @ResponseStatus(code = HttpStatus.CREATED)
     public void createUser(@RequestBody Users user) {
         user.setUserid(UUID.randomUUID());
