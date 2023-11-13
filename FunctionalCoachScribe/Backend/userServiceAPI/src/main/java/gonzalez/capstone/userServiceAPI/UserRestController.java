@@ -1,8 +1,8 @@
 package gonzalez.capstone.userServiceAPI;
 
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
 import org.springframework.http.HttpStatus;
 
 import java.time.LocalDate;
@@ -36,21 +36,19 @@ public class UserRestController {
         return userRepository.findById(userid).orElseThrow(() -> new NoSuchElementException());
     }
 
-    @PostMapping(path = "/utserthing")
+    @PostMapping(path="/fuckyou")
     @ResponseStatus(code = HttpStatus.CREATED)
-    public void createUser(@RequestBody Users user) {
-        user.setUserid(UUID.randomUUID());
-//            user.setJoinDate(createRandomDate(2000,2023));
-        userRepository.save(user);
+    public void createProduct(@RequestBody Users product){
+        userRepository.save(product);
     }
 
-    @PostMapping(path = "/addUsers")
-    @ResponseStatus(code = HttpStatus.CREATED)
-    public void createUser(@RequestBody List<Users> users) {
-        for (Users user : users) {
-            createUser(user);
-        }
-    }
+    // @PostMapping(path = "/addUsers")
+    // @ResponseStatus(code = HttpStatus.CREATED)
+    // public void createUser(@RequestBody List<Users> users) {
+    //     for (Users user : users) {
+    //         createUser(users);
+    //     }
+    // }
 
     @PutMapping(path = "/{userid}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
@@ -79,4 +77,3 @@ public class UserRestController {
         return LocalDate.of(year, month, day);
     }
 }
-

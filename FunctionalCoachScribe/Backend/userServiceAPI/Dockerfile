@@ -7,10 +7,10 @@ FROM tomcat:11.0.0-jdk17
 COPY --from=build /home/app/target/UserServiceAPI.war /usr/local/tomcat/webapps/ROOT.war
 
 ENV SERVER_PORT=8082
-ENV MONGO_HOST=CAPMongoDB_UserService
+# ENV MONGO_HOST=CAPMongoDB_UserService
 ENV MONGO_PORT=27017
 ENV MONGO_DB=user_storage
-ENV EUREKA_HOST=CAPEurekaRegistry
+# ENV EUREKA_HOST=CAPEurekaRegistry
 
 #FROM maven:3.9.4-eclipse-temurin-17
 # COPY src /home/app/src
