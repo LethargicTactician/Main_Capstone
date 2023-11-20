@@ -1,4 +1,4 @@
-package gonzalez.capstone.userServiceAPI;
+package gonzalez.capstone.userServiceAPI.models;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -13,23 +13,24 @@ public class Users {
     private String lastName;
     private String email;
     private String password;
-    private boolean isCoach;
-    private boolean isAdmin;
+    // private boolean isCoach;
+    // private boolean isAdmin;
+    // private enum Role {STAFF, ADMIN, STUDENT, COACH;}
+    private String role;
     private LocalDate joinDate;
 
 
-
     public Users(){
-        this.userid = UUID.randomUUID();
-        this.firstName = null;
-        this.lastName = null;
-        this.email = null;
-        this.password = null;
-        this.isCoach =  false;
-        this.isAdmin = false;
+        // this.userid = UUID.randomUUID();
+        // this.firstName = null;
+        // this.lastName = null;
+        // this.email = null;
+        // this.password = null;
+        // this.role = "Student";
 
     }
     //----------------- GETTERS -------------------
+
     public UUID getUserid() {
         return userid;
     }
@@ -48,14 +49,6 @@ public class Users {
 
     public String getPassword() {
         return password;
-    }
-
-    public boolean isCoach() {
-        return isCoach;
-    }
-
-    public boolean isAdmin() {
-        return isAdmin;
     }
 
     public LocalDate getJoinDate() {
@@ -84,15 +77,17 @@ public class Users {
         this.password = password;
     }
 
-    public void setCoach(boolean coach) {
-        this.isCoach = coach;
-    }
-
-    public void setAdmin(boolean admin) {
-        this.isAdmin = admin;
-    }
-
     public void setJoinDate(LocalDate joinDate) {
         this.joinDate = joinDate;
+    }
+
+
+    public String getRole() {
+        return role;
+    }
+
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }
