@@ -22,7 +22,7 @@ public class CoachService {
     @Autowired
     private CoachRepository coachRepository;
 
-    public ResponseEntity<String> assignCoach(UUID userId, List<Double> hours, List<String> coachingDays, List<String> course) {
+    public ResponseEntity<String> assignCoach(UUID userId, List<String> hours, List<String> coachingDays, List<String> course) {
         Users user = userRepository.findById(userId).orElseThrow(() -> new NoSuchElementException());
 
         // Check if the user is not already a coach

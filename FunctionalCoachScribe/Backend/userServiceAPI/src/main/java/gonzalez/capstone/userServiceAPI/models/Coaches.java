@@ -13,10 +13,11 @@ public class Coaches {
     //One on one relationship with users
     @Id
     private UUID coachId;
+    
     @DBRef
     private Users coachid;
 
-    private List<Double> hours;
+    private List<String> hours;
     private List<String> coachingDays;
     private List<String> course;
 
@@ -37,10 +38,10 @@ public class Coaches {
         this.coachid = coachid;
     }
 
-    public List<Double> getHours() {
+    public List<String> getHours() {
         return hours;
     }
-    public void setHours(List<Double> hours) {
+    public void setHours(List<String> hours) {
         this.hours = hours;
     }
     public List<String> getCoachingDays() {
