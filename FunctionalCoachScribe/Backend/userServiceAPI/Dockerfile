@@ -10,7 +10,7 @@ ENV SERVER_PORT=8081
 ENV MONGO_HOST=CapstoneUserTest
 ENV MONGO_PORT=27019
 ENV MONGO_DB=UserCapstone
-# ENV EUREKA_HOST=CAPEurekaRegistry
+ENV EUREKA_HOST=CAPEurekaRegistry
 
 #FROM maven:3.9.4-eclipse-temurin-17
 # COPY src /home/app/src

@@ -4,13 +4,13 @@ networks:
   netCapstone:
 
 services:
-  CAPMongoDB_UserService:
-    container_name: CAPMongoDB_UserService
+  CapstoneUserTest:
+    container_name: CapstoneUserTest
     image: mongo:latest
     restart: always
-    hostname: CAPMongoDB_UserService
+    hostname: CapstoneUserTest
     ports:
-      - "27017:27017"
+      - "27017:27019"
     networks:
       - netCapstone
 
@@ -37,6 +37,17 @@ services:
     networks:
       - netCapstone
 
+  CapstoneDBRedis:
+    container_name: CapstoneDBRedis
+    image: redis:latest
+    restart: always
+    hostname: CapstoneDBRedis
+    ports:
+      - "6379:6379"
+    networks:
+      - netCapstone
+ 
+
   UserServiceAPI:
     container_name: UserServiceAPI
     build:
@@ -51,7 +62,7 @@ services:
     networks:
       - netCapstone
     depends_on:
-      - CAPMongoDB_UserService
+      - CapstoneUserTest
       - CAPEurekaRegistry
       - CAPAPIGatewayOcelot
     deploy:
@@ -67,7 +78,7 @@ services:
     restart: always
     hostname: chatservice
     ports:
-      - "8080:8080"
+      - "8084"
     networks:
       - netCapstone
 
