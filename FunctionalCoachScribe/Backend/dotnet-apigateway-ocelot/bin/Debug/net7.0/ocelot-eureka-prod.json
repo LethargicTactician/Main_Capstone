@@ -1,47 +1,9 @@
 {
   "Routes": [
     {
-      "ServiceName": "SEN300BooksServiceAPI",
+      "ServiceName": "UserServiceAPI",
       "DownstreamPathTemplate": "/{everything}",
-      "UpstreamPathTemplate": "/booksserviceapi/{everything}",
-      "UpstreamHttpMethod": [
-        "GET",
-        "POST",
-        "PUT",
-        "DELETE"
-      ],
-      "FileCacheOptions": {
-        "TtlSeconds": 15
-      },
-      "LoadBalancerOptions": {
-        "Type": "LeastConnection",
-        "Key": null,
-        "Expiry": 0
-      }
-    },
-    {
-      "ServiceName": "SEN300BasketServiceAPI",
-      "DownstreamPathTemplate": "/{everything}",
-      "UpstreamPathTemplate": "/basketserviceapi/{everything}",
-      "UpstreamHttpMethod": [
-        "GET",
-        "POST",
-        "PUT",
-        "DELETE"
-      ],
-      "FileCacheOptions": {
-        "TtlSeconds": 15
-      },
-      "LoadBalancerOptions": {
-        "Type": "LeastConnection",
-        "Key": null,
-        "Expiry": 0
-      }
-    },
-    {
-      "ServiceName": "SEN300OrdersServiceAPI",
-      "DownstreamPathTemplate": "/{everything}",
-      "UpstreamPathTemplate": "/ordersapi/{everything}",
+      "UpstreamPathTemplate": "/userserviceapi/{everything}",
       "UpstreamHttpMethod": [
         "GET",
         "POST",
@@ -59,13 +21,13 @@
     }
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "http://SEN300APIGatewayOcelot:80",
+    "BaseUrl": "http://CAPAPIGatewayOcelot:80",
     "RequestIdKey": "OcRequestId",
     "DownstreamScheme": "http",
     "ReRoutesCaseSensitive": false,
     "UseServiceDiscovery": true,
     "ServiceDiscoveryProvider": {
-      "Host": "SEN300EurekaRegistry",
+      "Host": "CAPEurekaRegistry",
       "Port": 8761,
       "Type": "Eureka"
     }

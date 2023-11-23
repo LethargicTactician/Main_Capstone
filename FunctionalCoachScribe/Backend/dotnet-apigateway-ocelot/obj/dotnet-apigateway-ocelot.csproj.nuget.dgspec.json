@@ -1,17 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Rosy Gonzalez\\SEN300\\In-Class proj\\dotnet-apigateway-ocelot\\dotnet-apigateway-ocelot.csproj": {}
+    "C:\\Users\\Rosy Gonzalez\\CAPISTONEEE\\FunctionalCoachScribe\\Backend\\dotnet-apigateway-ocelot\\dotnet-apigateway-ocelot.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Rosy Gonzalez\\SEN300\\In-Class proj\\dotnet-apigateway-ocelot\\dotnet-apigateway-ocelot.csproj": {
+    "C:\\Users\\Rosy Gonzalez\\CAPISTONEEE\\FunctionalCoachScribe\\Backend\\dotnet-apigateway-ocelot\\dotnet-apigateway-ocelot.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Rosy Gonzalez\\SEN300\\In-Class proj\\dotnet-apigateway-ocelot\\dotnet-apigateway-ocelot.csproj",
-        "projectName": "dotnet-apigateway-ocelot",
-        "projectPath": "C:\\Users\\Rosy Gonzalez\\SEN300\\In-Class proj\\dotnet-apigateway-ocelot\\dotnet-apigateway-ocelot.csproj",
+        "projectPath": "C:\\Users\\Rosy Gonzalez\\CAPISTONEEE\\FunctionalCoachScribe\\Backend\\dotnet-apigateway-ocelot\\dotnet-apigateway-ocelot.csproj",
         "packagesPath": "C:\\Users\\Rosy Gonzalez\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Rosy Gonzalez\\SEN300\\In-Class proj\\dotnet-apigateway-ocelot\\obj\\",
+        "outputPath": "C:\\Users\\Rosy Gonzalez\\CAPISTONEEE\\FunctionalCoachScribe\\Backend\\dotnet-apigateway-ocelot\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -2,7 +2,7 @@
   "Routes": [
     {
       "DownstreamPathTemplate": "/{everything}",
-      "UpstreamPathTemplate": "/customer/{everything}",
+      "UpstreamPathTemplate": "/userserviceapi/{everything}",
       "UpstreamHttpMethod": [
         "GET",
         "POST",

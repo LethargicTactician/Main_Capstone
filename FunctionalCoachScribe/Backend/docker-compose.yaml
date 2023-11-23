@@ -10,7 +10,7 @@ services:
     restart: always
     hostname: CapstoneUserTest
     ports:
-      - "27017:27019"
+      - "27019:27019"
     networks:
       - netCapstone
 
@@ -53,21 +53,23 @@ services:
     build:
       dockerfile: Dockerfile
       context: ./userServiceAPI
+    environment:
+      - spring.application.name=UserServiceAPI
     #      context: Dockerfile # Path to the Dockerfile and application code
     image: userserviceapi:1
     restart: always
     hostname: UserServiceAPI
     ports:
-      - "8081:8082"
+      - "8080:8081"
     networks:
       - netCapstone
     depends_on:
       - CapstoneUserTest
       - CAPEurekaRegistry
       - CAPAPIGatewayOcelot
-    deploy:
-      mode: replicated
-      replicas: 1
+    # deploy:
+    #   mode: replicated
+    #   replicas: 2
 
   ChatService:
     container_name: ChatService

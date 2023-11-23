@@ -10,6 +10,6 @@ COPY --from=build /home/app/target/ChatService.war /usr/local/tomcat/webapps/ROO
 
 
 ENV SERVER_PORT=8084
-ENV MONGO_HOST=CapstoneUserTest
-ENV MONGO_PORT=27019
-ENV MONGO_DB=UserCapstone
+# ENV MONGO_HOST=CapstoneUserTest
+# ENV MONGO_PORT=27019
+# ENV MONGO_DB=UserCapstone
