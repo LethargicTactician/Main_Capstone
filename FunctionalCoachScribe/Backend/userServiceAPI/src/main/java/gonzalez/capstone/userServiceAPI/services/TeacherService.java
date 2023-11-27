@@ -50,4 +50,25 @@ public class TeacherService {
         // return null;
     }
     
+    public ResponseEntity<String> removeTeacherRole(UUID userId) {
+        Users user = userRepository.findById(userId).orElseThrow(() -> new NoSuchElementException());
+
+        if ("teacher".equals(user.getRole())) {
+            // Delete the teacher instance
+            Teachers teacher = teacherRepository.findByUserInfo(user);
+            if (teacher != null) {
+                teacherRepository.deleteById(teacher.getTeacherid());
+            }
+
+            // Change the user role back to student
+            user.setRole("student");
+            userRepository.save(user);
+
+            return ResponseEntity.status(HttpStatus.SC_OK).body("Teacher role removed successfully");
+        } else {
+            // Handle the case where the user is not a teacher
+            String message = "User is not a teacher";
+            return ResponseEntity.status(HttpStatus.SC_BAD_REQUEST).body(message);
+        }
+    }
 }

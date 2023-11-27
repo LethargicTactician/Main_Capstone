@@ -1,0 +1,1 @@
+ docker run --name CapstoneUserTest -p27019:27017 --net netCapstone -d mongo:latest  

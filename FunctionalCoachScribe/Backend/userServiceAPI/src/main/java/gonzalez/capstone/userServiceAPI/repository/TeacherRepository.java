@@ -12,4 +12,6 @@ import java.util.UUID;
 public interface TeacherRepository extends MongoRepository<Teachers, UUID> {
     Teachers findByUserInfoLastName(String lastName);
     Teachers findByTeacherid(Users user);
+    void deleteByUserInfo(Users user);
+    Teachers findByUserInfo(Users user);
 }

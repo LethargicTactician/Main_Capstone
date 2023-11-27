@@ -46,7 +46,6 @@ services:
       - "6379:6379"
     networks:
       - netCapstone
- 
 
   UserServiceAPI:
     container_name: UserServiceAPI
@@ -55,7 +54,6 @@ services:
       context: ./userServiceAPI
     environment:
       - spring.application.name=UserServiceAPI
-    #      context: Dockerfile # Path to the Dockerfile and application code
     image: userserviceapi:1
     restart: always
     hostname: UserServiceAPI
@@ -67,61 +65,16 @@ services:
       - CapstoneUserTest
       - CAPEurekaRegistry
       - CAPAPIGatewayOcelot
-    # deploy:
-    #   mode: replicated
-    #   replicas: 2
 
-  ChatService:
-    container_name: ChatService
-    build:
-      context: ./chatservice
-      dockerfile: Dockerfile
-    image: chatservice:1
-    restart: always
-    hostname: chatservice
-    ports:
-      - "8084"
-    networks:
-      - netCapstone
-
-
-#----------------------- TRASH------------------
-#      - CapEureakRegistry
-#      - CapOcelotGateway
-
-#    UserService:
-#      container_name: UserService
-#      image: your-user-service-image
-#      restart: always
-#      depends_on:
-#        - CAPMongoDB_UserService
-#      networks:
-#        - netCapstone
-
-#    ChatServiceAPI:
-#      container_name: ChatServiceAPI
-#      build:
-#        #      context: UserServiceAPI
-#        dockerfile: Dockerfile
-#      image: chat-service-api:1
-#      restart: always
-#      hostname: chatservice
-#      ports:
-#        - "8082:8083"
-#      networks:
-#        - netCapstone
-#      depends_on:
-#        - UserServiceAPI
-#        - CAPMongoDB_UserService
-#
-#  rabbitmq:
-#    image: rabbitmq:management
-#    ports:
-#      - "5672:5672"
-#      - "15672:15672"
-#    networks:
-#      - netPRO290
-#
-# deploy:
-#   mode: replicated
-#   replicas: 2
+  # ChatService:
+  #   container_name: ChatService
+  #   build:
+  #     context: ./chatservice
+  #     dockerfile: Dockerfile
+  #   image: chatservice:1
+  #   restart: always
+  #   hostname: chatservice
+  #   ports:
+  #     - "8084"
+  #   networks:
+  #     - netCapstone

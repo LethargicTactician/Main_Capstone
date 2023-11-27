@@ -188,6 +188,25 @@ public class UserRestController {
         }
         teacherRepository.save(teacher);
     }
+
+    //------------------------ DELETE TEACHER ?? --- 
+    @PutMapping(path = "/{userUUID}/removeTeacherRole")
+    @ResponseStatus(HttpStatus.OK)
+    public void removeTeacherRole(@PathVariable(required = true) UUID userUUID) {
+        Users user = userRepository.findById(userUUID).orElseThrow(() -> new NoSuchElementException());
+    
+        if ("teacher".equals(user.getRole())) {
+            // Find and delete the associated Teacher instance
+            Teachers teacher = teacherRepository.findByUserInfo(user);
+            if (teacher != null) {
+                teacherRepository.delete(teacher);
+            }
+    
+            // Update the user's role to "student"
+            user.setRole("student");
+            userRepository.save(user);
+        }
+    }
     //#endregion teacher endpoints
 
     //------------------------ USER BASIC CRUD OPERATIONS ---------------------------------
