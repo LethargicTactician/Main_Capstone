@@ -51,4 +51,26 @@ public class CoachService {
         }
         // return null;
     }
+
+    public ResponseEntity<String> removeCoachRole(UUID userId) {
+        Users user = userRepository.findById(userId).orElseThrow(() -> new NoSuchElementException());
+
+        if ("coach".equals(user.getRole())) {
+            // Delete the teacher instance
+            Coaches coach = coachRepository.findByCoachid(user);
+            if (coach != null) {
+                coachRepository.deleteById(coach.getCoachId());
+            }
+
+            // Change the user role back to student
+            user.setRole("student");
+            userRepository.save(user);
+
+            return ResponseEntity.status(HttpStatus.SC_OK).body("coach role removed successfully");
+        } else {
+            // Handle the case where the user is not a teacher
+            String message = "User is not a coach";
+            return ResponseEntity.status(HttpStatus.SC_BAD_REQUEST).body(message);
+        }
+    }
 }

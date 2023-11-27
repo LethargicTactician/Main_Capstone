@@ -11,7 +11,7 @@ public class Staff {
     @Id
     private UUID staffid;
     @DBRef
-    private Users UUID;
+    private Users userInfo;
 
     private String title;
     private int roomNumber;
@@ -25,11 +25,11 @@ public class Staff {
         this.staffid = staffid;
     }
     //do i really need this? Yesnt?
-    public Users getUUID() {
-        return UUID;
+    public Users getUserInfo() {
+        return userInfo;
     }
-    public void setUUID(Users uUID) {
-        UUID = uUID;
+    public void setUserInfo(Users userInfoo) {
+        userInfo = userInfoo;
     }
     
     public String getTitle() {

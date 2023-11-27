@@ -12,5 +12,7 @@ import java.util.UUID;
 public interface CoachRepository extends MongoRepository<Coaches, UUID> {
     Coaches findByCoachid(Users user);
     // Coaches findByRole(Users userRole);
+    void deleteByCoachid(Users user);
+    // Coaches findByCoachid(Users user);
 }
 

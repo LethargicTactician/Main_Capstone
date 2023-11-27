@@ -8,9 +8,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import gonzalez.capstone.userServiceAPI.models.Coaches;
+import gonzalez.capstone.userServiceAPI.models.Staff;
 import gonzalez.capstone.userServiceAPI.models.Teachers;
 import gonzalez.capstone.userServiceAPI.models.Users;
 import gonzalez.capstone.userServiceAPI.repository.CoachRepository;
+import gonzalez.capstone.userServiceAPI.repository.StaffRepository;
 import gonzalez.capstone.userServiceAPI.repository.TeacherRepository;
 // import com.netflix.discovery.converters.Auto;
 import gonzalez.capstone.userServiceAPI.repository.UserRepository;
@@ -25,6 +27,8 @@ public class UserService {
     private CoachRepository coachRepository;
     @Autowired
     private TeacherRepository teacherRepository;
+    @Autowired 
+    private StaffRepository staffRepository;
     //#endregion autowire things
 
     //coach role update
@@ -85,18 +89,18 @@ public class UserService {
             user.setRole("staff");
             userRepository.save(user);
 
-            // Create a corresponding teacher entry
-            Teachers teacher = new Teachers();
-            teacher.setTeacherid(UUID.randomUUID());
-            teacher.setUserInfo(user);
+            // Create a corresponding staff entry
+            Staff staff = new Staff();
+            staff.setStaffid(UUID.randomUUID());
+            staff.setUserInfo(user);
 
             // Save the teacher entry to the database
-            teacherRepository.save(teacher);
+            staffRepository.save(staff);
 
            
-            return ResponseEntity.status(HttpStatus.SC_CREATED).body("User assigned as teacher successfully");
+            return ResponseEntity.status(HttpStatus.SC_CREATED).body("User assigned as staff successfully");
         } else {
-            return ResponseEntity.status(HttpStatus.SC_CONFLICT).body("User is already a teacher");
+            return ResponseEntity.status(HttpStatus.SC_CONFLICT).body("User is already part of staff");
         }
     }
 }
