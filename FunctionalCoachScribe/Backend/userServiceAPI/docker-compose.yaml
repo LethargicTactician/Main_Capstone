@@ -2,9 +2,9 @@ version: '1'
 services:
   mongodb:
     image: 'mongo:latest'
-    container_name: MongoDBCapstone
+    container_name: CapstoneUserTest
     ports:
-      - "27019:27019"
+      - "27017:27019"
     volumes:
       - "/data/configdb/data/db"
     networks:

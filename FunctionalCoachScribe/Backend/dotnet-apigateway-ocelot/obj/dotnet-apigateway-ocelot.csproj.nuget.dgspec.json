@@ -7,6 +7,8 @@
     "C:\\Users\\Rosy Gonzalez\\CAPISTONEEE\\FunctionalCoachScribe\\Backend\\dotnet-apigateway-ocelot\\dotnet-apigateway-ocelot.csproj": {
       "version": "1.0.0",
       "restore": {
+        "projectUniqueName": "C:\\Users\\Rosy Gonzalez\\CAPISTONEEE\\FunctionalCoachScribe\\Backend\\dotnet-apigateway-ocelot\\dotnet-apigateway-ocelot.csproj",
+        "projectName": "dotnet-apigateway-ocelot",
         "projectPath": "C:\\Users\\Rosy Gonzalez\\CAPISTONEEE\\FunctionalCoachScribe\\Backend\\dotnet-apigateway-ocelot\\dotnet-apigateway-ocelot.csproj",
         "packagesPath": "C:\\Users\\Rosy Gonzalez\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Rosy Gonzalez\\CAPISTONEEE\\FunctionalCoachScribe\\Backend\\dotnet-apigateway-ocelot\\obj\\",

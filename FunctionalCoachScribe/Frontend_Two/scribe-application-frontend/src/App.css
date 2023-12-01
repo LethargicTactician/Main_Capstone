@@ -339,6 +339,13 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   max-width: 100%;
   max-height: 470px;
   }
+
+.proj-imgbx img {
+  width: 100%; /* Set the width you want */
+  height: 100%; /* Set the height you want */
+  object-fit: cover; /* Crop the image to cover the specified dimensions */
+}
+
 .coach {
   padding: 80px 0;
   position: relative;
@@ -560,6 +567,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 
 /* ---------------------- CHATROOM CSS-------------------------------------- */
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

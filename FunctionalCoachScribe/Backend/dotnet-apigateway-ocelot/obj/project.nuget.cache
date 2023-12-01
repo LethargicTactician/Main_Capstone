@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4oKShlP9u00RggFoi2yLQ5eBwnUWyM9zU1Pxjt0UCBx2XukZlryIV+YrREid9ID/tz+2se8cvIkiQ+vAUop5sg==",
+  "dgSpecHash": "PQbB+DMH44hA2+v3Xxird95hRdWpUIw/gs3wKvshY8xyFrlHp4EbfZsYa/MiOmb/q2goDd8+AHA/8DqHfWQbVA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Rosy Gonzalez\\SEN300\\In-Class proj\\dotnet-apigateway-ocelot\\dotnet-apigateway-ocelot.csproj",
+  "projectFilePath": "C:\\Users\\Rosy Gonzalez\\CAPISTONEEE\\FunctionalCoachScribe\\Backend\\dotnet-apigateway-ocelot\\dotnet-apigateway-ocelot.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Rosy Gonzalez\\.nuget\\packages\\cachemanager.core\\2.0.0-beta-1629\\cachemanager.core.2.0.0-beta-1629.nupkg.sha512",
     "C:\\Users\\Rosy Gonzalez\\.nuget\\packages\\cachemanager.microsoft.extensions.configuration\\2.0.0-beta-1629\\cachemanager.microsoft.extensions.configuration.2.0.0-beta-1629.nupkg.sha512",
