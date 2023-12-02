@@ -1,6 +1,6 @@
 import { Row } from "react-bootstrap";
 import React, { useState, useEffect } from 'react';
-import { ProfessorCard } from "./ProfessorCard";
+import { ProfessorCard } from "./module-cards/ProfessorCard";
 import axios from 'axios';
 
 export const Professors = () => {

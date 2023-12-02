@@ -1,7 +1,7 @@
 import { Col, Container, Row, Nav, Tab } from "react-bootstrap";
 import {Staff} from "./modules/Staff";
 import {Coaches} from "./modules/Coaches";
-import {Professors} from "./Professor"
+import {Professors} from "./modules/Professor"
 import TrackVisibility from "react-on-screen";
 import "animate.css"
 
@@ -53,7 +53,7 @@ export const TabsInfo =()=>{
                     <Tab.Pane eventKey="second">
                       <Professors/>
                     </Tab.Pane>
-                    
+
                     <Tab.Pane eventKey="third">
                       <Row>
                         <Staff/>

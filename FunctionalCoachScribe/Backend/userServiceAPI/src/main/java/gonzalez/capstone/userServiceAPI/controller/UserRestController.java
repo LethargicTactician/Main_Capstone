@@ -184,25 +184,6 @@ public class UserRestController {
         return response;
     }
 
-    //-------------------------> REMOVE Teacher ROLE 
-    // @PutMapping(path = "/{userUUID}/removeProfessorRole")
-    // @ResponseStatus(HttpStatus.OK)
-    // public ResponseEntity<String> removeProfessorRole(@PathVariable(required = true) UUID userUUID) {
-    //     Users user = userRepository.findById(userUUID).orElseThrow(() -> new NoSuchElementException());
-    
-    //     // Check if the user is a teacher
-    //     if ("teacher".equals(user.getRole())) {
-    //         // Remove the teacher role
-    //         user.setRole("student");  // Set it to whatever the default role is
-    //         userRepository.save(user);
-    
-    //         // Return a success response
-    //         return ResponseEntity.status(HttpStatus.OK).body("Teacher role removed successfully");
-    //     } else {
-    //         // Return a response indicating that the user is not a teacher
-    //         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("User is not a Professor");
-    //     }
-    // }
 
     // -------------------------> ASSIGN PROFESSOR DETAILS
     @PutMapping(path = "/updateTeacher/{teacherUUID}")

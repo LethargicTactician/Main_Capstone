@@ -7,6 +7,8 @@ import {TabsInfo} from './components/TabsInfo';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Footer} from './components/Footer';
 import {Contact} from './components/Contact';
+import {AIChatbot} from './components/chat-components/AIChatbot'
+
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ChatRoom } from './components/chat-components/ChatRoom';
 
@@ -20,6 +22,7 @@ function App() {
         <TabsInfo/>
         <ChatRoom/>  
         <Contact/>
+        <AIChatbot/>
         <Footer/>
     </div>
     </BrowserRouter>
