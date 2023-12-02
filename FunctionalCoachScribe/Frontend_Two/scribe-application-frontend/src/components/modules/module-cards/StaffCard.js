@@ -1,16 +1,15 @@
 import { Col } from "react-bootstrap";
 
-export const CoachCard = ({ coachid: { firstName, lastName, email }, hours, coachingDays, course, imgUrl }) => {
+export const StaffCard = ({ userInfo: { firstName, lastName, email }, title, roomNumber, imgUrl }) => {
     return (
         <Col sm={6} md={4}>
             <div className="proj-imgbx">
                 <img src={imgUrl} alt="hi" />
                 <div className="proj-txtx">
                     <h4>{firstName} {lastName}</h4>
-                    <span>{email}</span>
-                    <p><b>Hours:</b> {hours}</p>
-                    <p><b>Coaching Days:</b> {coachingDays}</p>
-                    <p><b>Course:</b> {course}</p>
+                    <span>{email} </span>
+                    <p><b>Title:</b> {title} </p>
+                    <p><b>Office Number:</b> {roomNumber}</p>
                 </div>
             </div>
         </Col>

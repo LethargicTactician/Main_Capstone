@@ -3,7 +3,7 @@ import './App.css';
 import { NavBar } from './components/NavBar';
 import {Banner} from './components/Banner';
 import {Skills} from './components/Skills';
-import {Coaches} from './components/Coaches';
+import {TabsInfo} from './components/TabsInfo';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Footer} from './components/Footer';
 import {Contact} from './components/Contact';
@@ -17,7 +17,7 @@ function App() {
         <NavBar/>
         <Banner/>
         <Skills/>
-        <Coaches/>
+        <TabsInfo/>
         <ChatRoom/>  
         <Contact/>
         <Footer/>

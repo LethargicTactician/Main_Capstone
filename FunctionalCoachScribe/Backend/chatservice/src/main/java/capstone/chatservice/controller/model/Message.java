@@ -1,7 +1,7 @@
 package capstone.chatservice.controller.model;
 
 
-import jdk.jshell.Snippet;
+// import jdk.jshell.Snippet;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

@@ -341,8 +341,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   }
 
 .proj-imgbx img {
-  width: 100%; /* Set the width you want */
-  height: 100%; /* Set the height you want */
+  width: 600px;
+  height: 700px;
   object-fit: cover; /* Crop the image to cover the specified dimensions */
 }
 
