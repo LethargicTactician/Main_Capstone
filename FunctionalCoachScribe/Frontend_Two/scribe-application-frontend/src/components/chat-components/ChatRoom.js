@@ -24,7 +24,7 @@ export const ChatRoom = () => {
 
     //--------------- USER CONNECTION ------------>
     const connect = () => {
-        let Sock = new SockJS('http://localhost:8080/ws');  // Use port 8080 for host
+        let Sock = new SockJS('http://localhost:8085/ws');  // Use port 8080 for host
         stompClient = over(Sock);
         stompClient.connect({}, onConnected, onError);
     }
@@ -151,22 +151,6 @@ export const ChatRoom = () => {
     // -------------REACT stuff------------------->
     return (
     <div className="container" id="chat">
-        {/* <nav className="navbar">
-        <ul className="nav-list">
-            <li className="nav-item">
-            <a href="/">Home</a>
-            </li>
-            <li className="nav-item">
-            <a href="/about">About</a>
-            </li>
-            <li className="nav-item">
-            <a href="/services">Services</a>
-            </li>
-            <li className="nav-item">
-            <a href="/contact">Contact</a>
-            </li>
-        </ul>
-        </nav> */}
         {userData.connected?        
         <div className="chat-box">
             <div className="member-list">

@@ -12,7 +12,7 @@ export const Staff = () => {
         try {
           const response = await axios.get('https://api.unsplash.com/photos/random', {
             params: {
-              query: 'Adult wearing suit smiling',
+              query: 'Work',
               client_id: 'qn6r6zGNpPKxzPWtDaQinEPE9Ve0J4miXzr6JbH2RX4',
               width,
               height,

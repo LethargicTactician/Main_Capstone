@@ -9,7 +9,7 @@ COPY --from=build /home/app/target/ChatService.war /usr/local/tomcat/webapps/ROO
 #COPY --from=build /path/to/generated/war/chatserice.war /usr/local/tomcat/webapps/ROOT.war
 
 
-ENV SERVER_PORT=8084
+ENV SERVER_PORT=8085
 # ENV MONGO_HOST=CapstoneUserTest
 # ENV MONGO_PORT=27019
 # ENV MONGO_DB=UserCapstone

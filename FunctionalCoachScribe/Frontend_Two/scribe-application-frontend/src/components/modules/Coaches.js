@@ -11,7 +11,7 @@ export const Coaches = () =>{
             try {
                 const response = await axios.get('https://api.unsplash.com/photos/random', {
                     params: {
-                        query: 'college student with laptop',
+                        query: 'studying',
                         client_id: 'qn6r6zGNpPKxzPWtDaQinEPE9Ve0J4miXzr6JbH2RX4', 
                         width: width,
                         height: height,
@@ -58,7 +58,6 @@ export const Coaches = () =>{
 
     return (
         <div>
-            {/* Render CoachCard component when the "Coaches" tab is active */}
             {coaches.length > 0 && (
                 <Row>
                     {coaches.map((coach, index) => (

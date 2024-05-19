@@ -4,7 +4,6 @@ import {Row, Col, Container} from 'react-bootstrap';
 import meter1 from "../assets/img/meter1.svg";
 import meter2 from "../assets/img/meter2.svg";
 import meter3 from "../assets/img/meter3.svg";
-import colorSharp from "../assets/img/gradent.jpg";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 
@@ -46,15 +45,15 @@ return (
                         </div>
                         <div className="item">
                             <img src={meter2} alt="thing"/>
-                            <h5>Eating</h5>
+                            <h5>Learning</h5>
                         </div>
                         <div className="item">
                             <img src={meter3} alt="thing"/>
-                            <h5>eeping</h5>
+                            <h5>Talking</h5>
                         </div>
                         <div className="item">
                             <img src={meter1} alt="thing"/>
-                            <h5>growing</h5>
+                            <h5>Sleeping</h5>
                         </div>
                     </Carousel>
                 </div>
@@ -62,7 +61,6 @@ return (
                 </Col>
             </Row>
         </Container>
-        <img className="background-image-left" src={colorSharp} alt="hi"/>
     </section>
 )
 

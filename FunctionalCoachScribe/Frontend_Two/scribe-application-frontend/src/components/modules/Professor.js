@@ -11,7 +11,7 @@ export const Professors = () => {
             try {
                 const response = await axios.get('https://api.unsplash.com/photos/random', {
                     params: {
-                        query: 'college professor in classroom',
+                        query: 'teaching',
                         client_id: 'qn6r6zGNpPKxzPWtDaQinEPE9Ve0J4miXzr6JbH2RX4',
                         width: width,
                         height: height,
