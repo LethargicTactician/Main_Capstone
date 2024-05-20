@@ -16,11 +16,6 @@ Web Socket
 Voiceflow
 GPT 4
 
-> Users: Stores user account information.
-> Teachers: Stores user account information & schedule.
-> Staff: Stores user account information & schedule.
-> Coaches: Stores user account information & schedule.
-> Chat Service: Web Socket that allows a chat from user to user
 
 Users Collection - default/parent collection
 Teacher Collection
